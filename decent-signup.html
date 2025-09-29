@@ -3,16 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join GIANT Marketing Agency | Sign Up</title>
+    <title>GIANT Marketing Agency | Sign Up</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Use the same styles as decent-login.html for consistency */
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -23,69 +18,6 @@
             position: relative;
             overflow: hidden;
         }
-
-        /* Subtle Background Animation */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
-            animation: subtleShift 20s ease-in-out infinite;
-            z-index: -1;
-        }
-
-        @keyframes subtleShift {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-        }
-
-        /* Floating Elements */
-        .floating-elements {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .floating-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.1));
-            animation: float 30s infinite linear;
-        }
-
-        .floating-shape:nth-child(1) {
-            width: 60px; height: 60px; top: 20%; left: 10%;
-            animation-delay: 0s; animation-duration: 25s;
-        }
-        .floating-shape:nth-child(2) {
-            width: 80px; height: 80px; top: 60%; right: 15%;
-            animation-delay: -10s; animation-duration: 35s;
-        }
-        .floating-shape:nth-child(3) {
-            width: 40px; height: 40px; top: 80%; left: 20%;
-            animation-delay: -20s; animation-duration: 20s;
-        }
-        .floating-shape:nth-child(4) {
-            width: 100px; height: 100px; top: 10%; right: 30%;
-            animation-delay: -15s; animation-duration: 40s;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-            100% { transform: translateY(0px) rotate(360deg); }
-        }
-
-        /* Main Container */
         .container {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(20px);
@@ -94,33 +26,14 @@
             padding: 48px;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
             width: 100%;
-            max-width: 450px;
-            animation: slideUp 0.6s ease-out;
+            max-width: 340px; /* smaller width */
             position: relative;
+            margin: 0 auto; /* center horizontally */
         }
-
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #6366f1, #8b5cf6);
-            border-radius: 20px 20px 0 0;
-        }
-
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Header */
         .header {
             text-align: center;
             margin-bottom: 40px;
         }
-
         .logo {
             display: flex;
             align-items: center;
@@ -128,7 +41,6 @@
             gap: 16px;
             margin-bottom: 20px;
         }
-
         .logo-icon {
             width: 48px;
             height: 48px;
@@ -141,7 +53,6 @@
             color: white;
             box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
         }
-
         .logo h1 {
             font-size: 36px;
             font-weight: 700;
@@ -151,51 +62,47 @@
             background-clip: text;
             letter-spacing: 1px;
         }
-
         .tagline {
             color: #94a3b8;
             font-size: 16px;
             font-weight: 400;
         }
-
-        /* Form */
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
-
         .input-wrapper {
             position: relative;
-        }
-
-        .input-wrapper input,
-        .input-wrapper select {
             width: 100%;
-            padding: 16px 20px 16px 48px;
+            max-width: 220px; /* smaller and centered */
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+        .input-wrapper input {
+            width: 100%;
+            padding: 12px 18px 12px 40px;
+            font-size: 14px;
             background: rgba(51, 65, 85, 0.4);
             border: 1px solid rgba(51, 65, 85, 0.6);
             border-radius: 12px;
             color: #ffffff;
-            font-size: 15px;
             transition: all 0.3s ease;
             outline: none;
+            box-sizing: border-box;
+            display: block;
+            margin: 0 auto;
         }
-
-        .input-wrapper input:focus,
-        .input-wrapper select:focus {
+        .input-wrapper input:focus {
             border-color: #6366f1;
             background: rgba(51, 65, 85, 0.6);
             box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
         }
-
         .input-wrapper input::placeholder {
             color: #64748b;
         }
-
-        .input-wrapper select option {
-            background: #1e293b;
-            color: #ffffff;
-        }
-
         .input-icon {
             position: absolute;
             left: 16px;
@@ -204,44 +111,12 @@
             color: #64748b;
             font-size: 16px;
         }
-
-        /* Checkbox */
-        .checkbox-group {
-            margin-bottom: 32px;
-        }
-
-        .checkbox-label {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            cursor: pointer;
-            font-size: 14px;
-            color: #94a3b8;
-            line-height: 1.5;
-        }
-
-        .checkbox-label input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            accent-color: #6366f1;
-            cursor: pointer;
-        }
-
-        .checkbox-label a {
-            color: #6366f1;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .checkbox-label a:hover {
-            color: #8b5cf6;
-        }
-
-        /* Button */
         .btn {
             width: 100%;
-            padding: 16px;
+            max-width: 220px;
+            padding: 12px;
+            margin: 10px auto 0 auto;
+            display: block;
             background: linear-gradient(135deg, #6366f1, #8b5cf6);
             border: none;
             border-radius: 12px;
@@ -249,7 +124,6 @@
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -257,54 +131,27 @@
             position: relative;
             overflow: hidden;
         }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 12px 24px rgba(99, 102, 241, 0.3);
         }
-
-        .btn:active {
-            transform: translateY(0);
-        }
-
-        /* Footer */
         .footer {
             text-align: center;
-            margin-top: 32px;
+            margin-top: 24px;
         }
-
         .footer p {
             color: #64748b;
             font-size: 14px;
         }
-
         .footer a {
             color: #6366f1;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s ease;
         }
-
         .footer a:hover {
             color: #8b5cf6;
         }
-
-        /* Message */
         .message {
             padding: 16px;
             border-radius: 12px;
@@ -313,33 +160,27 @@
             align-items: center;
             gap: 12px;
             font-size: 14px;
-            animation: slideDown 0.3s ease-out;
         }
-
         .message.success {
             background: rgba(16, 185, 129, 0.1);
             border: 1px solid rgba(16, 185, 129, 0.2);
             color: #10b981;
         }
-
         .message.error {
             background: rgba(239, 68, 68, 0.1);
             border: 1px solid rgba(239, 68, 68, 0.2);
             color: #ef4444;
         }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* center children horizontally */
         }
-
-        /* Responsive */
         @media (max-width: 480px) {
             .container {
                 padding: 32px 24px;
                 margin: 20px;
             }
-            
             .logo h1 {
                 font-size: 32px;
             }
@@ -347,17 +188,7 @@
     </style>
 </head>
 <body>
-    <!-- Floating Elements -->
-    <div class="floating-elements">
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
-    </div>
-
-    <!-- Main Container -->
     <div class="container">
-        <!-- Header -->
         <div class="header">
             <div class="logo">
                 <div class="logo-icon">
@@ -367,196 +198,59 @@
             </div>
             <p class="tagline">Empowering Tomorrow, Today</p>
         </div>
-
-        <!-- Signup Form -->
         <form id="signupForm">
             <div class="form-group">
                 <div class="input-wrapper">
-                    <input type="text" id="full_name" placeholder="Full Name" required>
+                    <input type="text" id="name" placeholder="Full Name" required>
                     <i class="fas fa-user input-icon"></i>
                 </div>
             </div>
-
             <div class="form-group">
                 <div class="input-wrapper">
-                    <input type="text" id="username" placeholder="Username" required>
-                    <i class="fas fa-at input-icon"></i>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="input-wrapper">
-                    <input type="email" id="email" placeholder="Email Address" required>
+                    <input type="email" id="email" placeholder="Email" required>
                     <i class="fas fa-envelope input-icon"></i>
                 </div>
             </div>
-
-            <div class="form-group">
-                <div class="input-wrapper">
-                    <select id="role" required>
-                        <option value="">Select Role</option>
-                        <option value="client">Client</option>
-                        <option value="employee">Employee</option>
-                        <option value="manager">Manager</option>
-                    </select>
-                    <i class="fas fa-briefcase input-icon"></i>
-                </div>
-            </div>
-
             <div class="form-group">
                 <div class="input-wrapper">
                     <input type="password" id="password" placeholder="Password" required>
                     <i class="fas fa-lock input-icon"></i>
                 </div>
             </div>
-
-            <div class="form-group">
-                <div class="input-wrapper">
-                    <input type="password" id="confirm_password" placeholder="Confirm Password" required>
-                    <i class="fas fa-lock input-icon"></i>
-                </div>
-            </div>
-
-            <div class="form-group checkbox-group">
-                <label class="checkbox-label">
-                    <input type="checkbox" id="terms" required>
-                    I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
-                </label>
-            </div>
-
             <button type="submit" class="btn">
-                <span>Create Account</span>
+                <span>Sign Up</span>
                 <i class="fas fa-arrow-right"></i>
             </button>
-
             <div class="footer">
                 <p>Already have an account? <a href="decent-login.html">Sign In</a></p>
             </div>
         </form>
     </div>
-
     <script>
-        // Form functionality
         document.getElementById('signupForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const fullName = document.getElementById('full_name').value;
-            const username = document.getElementById('username').value;
+            const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
-            const role = document.getElementById('role').value;
             const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirm_password').value;
-            const terms = document.getElementById('terms').checked;
-            
-            // Validation
-            if (!fullName || !username || !email || !role || !password || !confirmPassword) {
+            if (name && email && password) {
+                showMessage('Signup successful! You can now log in.', 'success');
+                setTimeout(() => {
+                    window.location.href = 'decent-login.html';
+                }, 2000);
+            } else {
                 showMessage('Please fill in all fields', 'error');
-                return;
             }
-            
-            if (password !== confirmPassword) {
-                showMessage('Passwords do not match', 'error');
-                return;
-            }
-            
-            if (password.length < 6) {
-                showMessage('Password must be at least 6 characters', 'error');
-                return;
-            }
-            
-            if (!terms) {
-                showMessage('Please accept the terms and conditions', 'error');
-                return;
-            }
-            
-            // Show success message
-            showMessage('Registration successful! Welcome to GIANT Marketing Agency!', 'success');
-            
-            // Simulate redirect to login
-            setTimeout(() => {
-                window.location.href = 'decent-login.html';
-            }, 2000);
         });
-
         function showMessage(message, type) {
-            // Remove existing messages
             const existingMessage = document.querySelector('.message');
-            if (existingMessage) {
-                existingMessage.remove();
-            }
-
+            if (existingMessage) existingMessage.remove();
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${type}`;
-            messageDiv.innerHTML = `
-                <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
-                ${message}
-            `;
-            
+            messageDiv.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i> ${message}`;
             const form = document.getElementById('signupForm');
             form.insertBefore(messageDiv, form.firstChild);
-            
-            setTimeout(() => {
-                messageDiv.remove();
-            }, 5000);
+            setTimeout(() => { messageDiv.remove(); }, 5000);
         }
-
-        // Enhanced input effects
-        const inputs = document.querySelectorAll('input, select');
-        inputs.forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.style.transform = 'translateY(-2px)';
-            });
-            
-            input.addEventListener('blur', function() {
-                this.parentElement.style.transform = 'translateY(0)';
-            });
-
-            input.addEventListener('input', function() {
-                if (this.value) {
-                    this.style.borderColor = '#10b981';
-                } else {
-                    this.style.borderColor = 'rgba(51, 65, 85, 0.6)';
-                }
-            });
-        });
-
-        // Password validation
-        document.getElementById('password').addEventListener('input', function() {
-            const password = this.value;
-            if (password.length > 0 && password.length < 6) {
-                this.style.borderColor = '#ef4444';
-            } else if (password.length >= 6) {
-                this.style.borderColor = '#10b981';
-            } else {
-                this.style.borderColor = 'rgba(51, 65, 85, 0.6)';
-            }
-        });
-
-        // Confirm password validation
-        document.getElementById('confirm_password').addEventListener('input', function() {
-            const password = document.getElementById('password').value;
-            const confirmPassword = this.value;
-            
-            if (confirmPassword.length > 0) {
-                if (password === confirmPassword) {
-                    this.style.borderColor = '#10b981';
-                } else {
-                    this.style.borderColor = '#ef4444';
-                }
-            } else {
-                this.style.borderColor = 'rgba(51, 65, 85, 0.6)';
-            }
-        });
-
-        // Container hover effect
-        const container = document.querySelector('.container');
-        container.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-4px)';
-        });
-
-        container.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
     </script>
 </body>
 </html>
